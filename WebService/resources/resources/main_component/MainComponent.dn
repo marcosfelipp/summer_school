@@ -1,0 +1,4 @@
+interface MainComponent {
+	void method()
+	void test_method()
+}

@@ -1,0 +1,8 @@
+componet provides request_handler.Requesthandler requires http_handler.HTTPHandler http_handler{
+
+    void Requesthandler:apply_cuncurrency(){
+        // Escrever algo aqui...
+
+        http_handler.send_response()
+    }
+}

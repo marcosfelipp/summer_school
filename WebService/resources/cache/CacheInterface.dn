@@ -1,0 +1,4 @@
+interface CacheInterface{
+    char[] get()
+    void set()
+}

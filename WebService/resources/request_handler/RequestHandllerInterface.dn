@@ -1,0 +1,3 @@
+interface RequestHandllerInterface{
+    void apply_cuncurrency()
+}

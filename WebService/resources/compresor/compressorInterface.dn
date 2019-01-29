@@ -1,0 +1,4 @@
+interface compressorInterface{
+    void compress()
+    void descompress()
+}

@@ -1,0 +1,8 @@
+component provides http_handler.HTTPHandler requires compressor.Compressor compressor cache.Cache cache{
+
+    void HTTPHandler:send_response(){
+        // Ver como chama um ou outro aqui
+
+    }
+
+}

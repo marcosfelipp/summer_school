@@ -1,0 +1,8 @@
+component provides web_server.WebServer requires request_handler.RequestHandller request_handler{
+    void WebServer:send_request(){
+        // Fazer alguma coisa aqui
+
+        request_handler.apply_cuncurrency()
+    }
+
+}

@@ -1,0 +1,3 @@
+interface WebServer{
+    void send_request()
+}

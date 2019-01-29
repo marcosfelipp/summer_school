@@ -1,0 +1,8 @@
+component provides App requires Loader loader, composition.Adapter adapter,
+ io.Output out, composition.ObjectWriter, data.json.JSONEncoder jsonEncoder,
+ composition.Search search {
+     int App:main(AppParam param[]){
+         
+
+     }
+ }
