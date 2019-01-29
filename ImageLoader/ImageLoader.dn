@@ -1,0 +1,35 @@
+uses events.EventData
+
+component provides App requires ui.Window, media.image.ImageEncoder:png, ui.Image{
+  Window wnd
+  eventsink UIEvents(EventData ed){
+    if (ed.source === wnd && ed.type == Window.[close]){
+      wnd.close()
+    }
+
+  }
+
+  int App:main(AppParam params[]){
+    wnd = new Window("PNG example")
+    wnd.setSize(200, 200)
+    wnd.setVisible(true)
+
+    sinkevent UIEvents(wnd)
+
+    ImageEncoder src = new ImageEncoder:png()
+    src.loadImage("meme.png")
+
+    Image ix = new ui.Image(src.getPixels())
+    ix.setFrameSize(180, 180)
+    ix.setFrameFit(ui.Image.FIT_SCALE)
+    ix.setPosition(10,10)
+
+    wnd.addObject(ix)
+
+    wnd.waitForClose()
+
+    return 0
+
+  }
+
+}
