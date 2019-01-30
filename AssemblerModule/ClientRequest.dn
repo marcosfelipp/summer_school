@@ -1,0 +1,27 @@
+uses time.DateTime
+
+component provides App requires net.http.HTTPRequest http_r, io.Output out, time.Calendar calendar, 
+data.IntUtil int_util, time.DateUtil data_util{
+    
+    int App:main(AppParam args[]){
+        HTTPResponse response = new HTTPResponse()
+        DateTime time_start = new time.DateTime()
+        DateTime time_finish = new time.DateTime()
+        DateTime time_diff = new time.DateTime()
+
+        for (int i=0; i <17; i++){
+            time_start = calendar.getTime()
+            response = http_r.get("http://localhost:2012/", null)
+            time_finish = calendar.getTime()
+
+            time_diff = data_util.diff(time_start, time_finish)
+
+            out.println(int_util.intToString(time_diff.millisecond))
+        }
+
+        return 0
+    }
+
+
+
+}
